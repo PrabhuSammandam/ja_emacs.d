@@ -1,9 +1,9 @@
 (use-package projectile
-  :ensure helm
+;;  :ensure helm
   :init
 	(progn
 		(projectile-mode 1)
-		)
+	)
 	:bind-keymap(
 		     ("C-c p" . projectile-command-map)
 		     )

@@ -34,7 +34,7 @@
  '(custom-enabled-themes (quote (wheatgrass)))
  '(package-selected-packages
    (quote
-    (magit helm-projectile projectile ace-window helm use-package))))
+    (company-rtags magit helm-projectile projectile ace-window helm use-package))))
 
 
 (custom-set-faces

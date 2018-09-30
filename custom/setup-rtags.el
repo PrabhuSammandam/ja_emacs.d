@@ -18,5 +18,7 @@
 (define-key c-mode-base-map (kbd "M-?") 'rtags-display-summary)
 )
 
+(use-package company-rtags
+)
 
 (provide 'setup-rtags)

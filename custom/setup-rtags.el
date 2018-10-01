@@ -21,4 +21,7 @@
 (use-package company-rtags
 )
 
+(use-package helm-rtags
+  )
+
 (provide 'setup-rtags)

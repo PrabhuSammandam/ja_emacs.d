@@ -39,6 +39,14 @@
 	)
   (setq helm-ff-skip-boring-files t)
 
+  (setq helm-boring-buffer-regexp-list
+	(append
+	 '(".*\.o$")
+	 helm-boring-buffer-regexp-list
+	 )
+	)
+  (setq helm-skip-boring-buffers t)
+
 )
 
 (provide 'setup-helm)

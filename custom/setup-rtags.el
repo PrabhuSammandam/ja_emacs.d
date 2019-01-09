@@ -4,24 +4,22 @@
   (add-hook 'c-mode-hook 'rtags-start-process-unless-running)
   (add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
   (add-hook 'objc-mode-hook 'rtags-start-process-unless-running)
-  (add-to-list 'company-backends 'company-rtags)
   )
-  
+  :bind(
+	:map c-mode-base-map
+	     ("M-." . rtags-find-symbol-at-point)
+	     ("M-," . rtags-find-all-references-at-point)
+	     ("M-<left>" . rtags-location-stack-back)
+    	     ("M-<right>" . rtags-location-stack-forward)
+	     ("M-l" . rtags-imenu)
+	     )
+
 :config
-(rtags-enable-standard-keybindings)
-(setq rtags-autostart-diagnostics t)
-(setq rtags-completions-enabled t)
-(setq rtags-display-result-backend 'helm)
-(add-to-list 'company-backends 'company-rtags)
-(define-key c-mode-base-map (kbd "M-.") 'rtags-find-symbol-at-point)
-(define-key c-mode-base-map (kbd "M-,") 'rtags-find-all-references-at-point)
-(define-key c-mode-base-map (kbd "M-?") 'rtags-display-summary)
+   (rtags-enable-standard-keybindings)
+   (setq rtags-autostart-diagnostics t)
+   (setq rtags-completions-enabled t)
+   (setq rtags-display-result-backend 'helm)
+   (add-to-list 'company-backends 'company-rtags)
 )
-
-(use-package company-rtags
-)
-
-(use-package helm-rtags
-  )
 
 (provide 'setup-rtags)

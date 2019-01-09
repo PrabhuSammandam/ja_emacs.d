@@ -1,11 +1,10 @@
 (use-package projectile
-;;  :ensure helm
   :init
 	(progn
 		(projectile-mode 1)
 	)
 	:bind-keymap(
-		     ("C-c p" . projectile-command-map)
+		     ("<f8>" . projectile-command-map)
 		     )
 	:config
 	(setq projectile-completion-system 'helm)

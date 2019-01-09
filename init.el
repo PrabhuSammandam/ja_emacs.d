@@ -1,3 +1,6 @@
+;;===============================================================================
+;; USE-PACKAGE INITIALIZATION
+;;===============================================================================
 (require 'package)
 
 (add-to-list 'package-archives
@@ -15,26 +18,45 @@
 (setq use-package-always-ensure t)
 
 (add-to-list 'load-path "~/.emacs.d/custom")
+;;===============================================================================
+;; USE-PACKAGE INITIALIZATION
+;;===============================================================================
+
+
+;;--------------------------GLOBAL KEY-BINDINGS----------------------------------
+(global-set-key (kbd "M-q") 'kill-this-buffer)
+(global-set-key (kbd "<f9>") 'dired)
+;;--------------------------GLOBAL KEY-BINDINGS----------------------------------
 
 (require 'setup-helm)
-(require 'setup-ace-window)
 (require 'uncrustify)
-(require 'setup-company)
+
+(use-package company
+  :ensure t
+  :config
+  (setq global-company-mode t)
+ )
+
 (require 'setup-projectile)
-(require 'setup-helm-projectile)
 (require 'setup-rtags)
-(require 'setup-highlight-symbol)
 (require 'setup-magit)
+
+(use-package highlight-symbol)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (wheatgrass)))
+ '(cua-mode t nil (cua-base))
+ '(custom-enabled-themes (quote (adwaita)))
+ '(global-hl-line-mode t)
+ '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (company-rtags magit helm-projectile projectile ace-window helm use-package))))
+    (helm-rtags company-rtags highlight-symbol magit rtags projectile company helm use-package)))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 
 
 (custom-set-faces
@@ -42,5 +64,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(hl-line ((t (:inherit default :background "wheat" :foreground "black")))))
 

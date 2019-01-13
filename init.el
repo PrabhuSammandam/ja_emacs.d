@@ -24,8 +24,8 @@
 
 
 ;;--------------------------GLOBAL KEY-BINDINGS----------------------------------
-(global-set-key (kbd "M-q") 'kill-this-buffer)
-(global-set-key (kbd "<f9>") 'dired)
+(global-set-key (kbd "s-x") 'kill-this-buffer)
+(global-set-key (kbd "s-d") 'dired)
 ;;--------------------------GLOBAL KEY-BINDINGS----------------------------------
 
 (require 'setup-helm)

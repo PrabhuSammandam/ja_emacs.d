@@ -43,6 +43,8 @@
 
 (use-package highlight-symbol)
 
+(use-package helm-rtags)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -53,9 +55,10 @@
  '(global-hl-line-mode t)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   (quote
-    (helm-rtags company-rtags highlight-symbol magit rtags projectile company helm use-package)))
+	(quote
+	 (helm-rtags company-rtags highlight-symbol magit rtags projectile company helm use-package)))
  '(show-paren-mode t)
+ '(tab-width 3)
  '(tool-bar-mode nil))
 
 

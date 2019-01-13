@@ -4,11 +4,15 @@
 		(projectile-mode 1)
 	)
 	:bind-keymap(
-		     ("<f8>" . projectile-command-map)
+		     ("s-." . projectile-command-map)
 		     )
+	:bind(
+	      :map projectile-mode-map
+	      ("s-f" . projectile-find-file)
+	      )
 	:config
 	(setq projectile-completion-system 'helm)
-	(setq projectile-indexing-method 'native)
+	(setq projectile-indexing-method 'alien)
 	(setq projectile-enable-caching t)
 	(setq projectile-switch-project-action #'projectile-dired);the top-level directory of the project is immediately opened for you in a dired buffer
 	(setq projectile-globally-ignored-directories

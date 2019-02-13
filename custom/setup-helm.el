@@ -20,7 +20,7 @@
 	)
   :config
   (setq helm-echo-input-in-header-line t)
-  (setq helm-split-window-in-side-p t);open helm buffer inside current window, not occupy whole other window
+  (setq helm-split-window-inside-p t);open helm buffer inside current window, not occupy whole other window
   (setq helm-autoresize-max-height 0)
   (setq helm-autoresize-min-height 20)
 
@@ -43,3 +43,4 @@
 )
 
 (provide 'setup-helm)
+;;;

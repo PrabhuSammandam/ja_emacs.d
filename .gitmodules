@@ -1,0 +1,6 @@
+[submodule "shell-here"]
+	path = shell-here
+	url = https://github.com/ieure/shell-here.git
+[submodule "dired-du"]
+	path = dired-du
+	url = https://github.com/calancha/dired-du.git

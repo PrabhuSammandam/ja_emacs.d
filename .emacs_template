@@ -1,0 +1,3 @@
+;; set the environment variable EMACS_PATH and copy this file to home folder and then restart the emacs
+(add-to-list 'load-path (getenv "EMACS_PATH"))
+(require 'my-init)

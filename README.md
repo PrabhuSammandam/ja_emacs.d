@@ -1,2 +1,2 @@
 # ja_emacs.d
-emacs configuration.
+Read .emacs_template file

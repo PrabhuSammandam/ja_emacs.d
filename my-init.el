@@ -56,4 +56,27 @@
 ;; (require 'rtags-xref)
 ;; (require 'setup-rtags)
 
+(require 'setup-rtags_by_package)
+
+(use-package rtags-xref
+  :ensure t
+  )
+
+(use-package helm-rtags
+  :ensure t
+  )
+
+;; (use-package helm-dired-history
+;;   :ensure t
+;;   :init
+;;   (savehist-mode 1)
+;;   :config
+;;   (add-to-list 'savehist-additional-variables 'helm-dired-history-variable)
+;;   (with-eval-after-load 'dired
+;;     (require 'helm-dired-history)
+;;     (define-key dired-mode-map "," 'dired))
+
+;;   )
+
+
 (provide 'my-init)

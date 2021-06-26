@@ -130,12 +130,12 @@
                                               extended-command-history)
               savehist-autosave-interval 300))
 
-(use-package time
-  :ensure t
-  ;; :unless (display-graphic-p)
-  :hook (after-init . display-time-mode)
-  :init (setq display-time-24hr-format nil
-              display-time-day-and-date t))
+;; (use-package time
+;;   :ensure t
+;;   ;; :unless (display-graphic-p)
+;;   :hook (after-init . display-time-mode)
+;;   :init (setq display-time-24hr-format nil
+;;               display-time-day-and-date t))
 
 (use-package easy-kill
   :ensure t
@@ -177,23 +177,23 @@
   :mode ("\\.http\\'" . restclient-mode)
   )
 
-(use-package flycheck-pycheckers
-  :ensure t
-  )
+;; (use-package flycheck-pycheckers
+;;   :ensure t
+;;   )
 
-(use-package lsp-mode
-  :ensure t
-  :hook
-  (js-mode . lsp)
-  (js2-mode . lsp)
-  (python-mode . lsp)
-  (sh-mode . lsp)
-  :commands lsp
-)
+;; (use-package lsp-mode
+;;   :ensure t
+;;   :hook
+;;   (js-mode . lsp)
+;;   (js2-mode . lsp)
+;;   (python-mode . lsp)
+;;   (sh-mode . lsp)
+;;   :commands lsp
+;; )
 
-(use-package lsp-ui
-  :ensure t
-  )
+;; (use-package lsp-ui
+;;   :ensure t
+;;   )
 
 ;; (use-package helm-company               ; Helm frontend for company
 ;;   :ensure t

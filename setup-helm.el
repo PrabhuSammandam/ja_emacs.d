@@ -16,7 +16,8 @@
 	("<f12>". helm-mini)
 	("C-x C-f" . helm-find-files)
 	([remap isearch-occur] . helm-occur) ;; remapping the inbuild isearch-occur with helm-occur
-	("M-s o" . helm-occur)
+	;; ("M-s o" . helm-occur)
+        ("<f9>" . helm-occur)
 	:map helm-map
 	("<tab>" . helm-execute-persistent-action)
 	("C-z" . helm-select-action)

@@ -58,5 +58,5 @@
     ;; )
   )
 
-(provide 'setup-rtags)
+(provide 'setup-rtags_by_package)
 ;;; setup-rtags.el ends here

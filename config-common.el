@@ -1,3 +1,5 @@
+
+
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 

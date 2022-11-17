@@ -2,12 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-;; (add-hook 'dired-mode-hook
-;; 	  (lambda ()
-;; 	    ;; Set dired-x buffer-local variables here.  For example:
-;; 	    (dired-recent-mode 1)
-;; 	    ;; (dired-omit-mode 1)
-;; 	    ))
+(add-hook 'dired-mode-hook
+	  (lambda ()
+	    ;; Set dired-x buffer-local variables here.  For example:
+	    ;; (dired-recent-mode 1)
+	    ;; (dired-omit-mode 1)
+;;            (dired-hide-details-mode 1)
+	    ))
 
 (eval-after-load "dired" '(progn
 			    (define-key dired-mode-map (kbd "M-<up>")
@@ -30,6 +31,8 @@
 
 (autoload 'dired-jump-other-window "dired-x"
   "Like \\[dired-jump] (dired-jump) but in other window." t)
+
+(global-set-key "\C-cf" (quote find-name-dired))
 
 (define-key global-map "\C-x\C-j" 'dired-jump)
 (define-key global-map "\C-x4\C-j" 'dired-jump-other-window)

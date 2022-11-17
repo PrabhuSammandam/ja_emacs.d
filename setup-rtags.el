@@ -27,6 +27,11 @@
 (setq rtags-symbolnames-case-insensitive t)
 (setq rtags-find-file-case-insensitive t)
 (setq rtags-display-result-backend 'helm)
+(setq rtags-show-containing-function t)
+(setq rtags-wildcard-symbol-names t)
+(setq rtags-imenu-syntax-highlighting nil)
+(setq rtags-print-filenames-relative t)
+
 
 (add-to-list 'company-backends 'company-rtags)
 (global-company-mode)
@@ -58,10 +63,10 @@
   (setq-local eldoc-documentation-function #'rtags-eldoc-function)
   (eldoc-mode 1))
 
-;; (use-package eldoc
-;; :diminish eldoc-mode
-;; :init (add-hook 'prog-mode-hook #'rtags-eldoc-mode)
-;; )
+(use-package eldoc
+:diminish eldoc-mode
+:init (add-hook 'prog-mode-hook #'rtags-eldoc-mode)
+)
 
 (defun my-flycheck-rtags-setup ()
   (flycheck-select-checker 'rtags)

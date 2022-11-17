@@ -4,3 +4,6 @@
 [submodule "dired-du"]
 	path = dired-du
 	url = https://github.com/calancha/dired-du.git
+[submodule "json-sexp-mode"]
+	path = json-sexp-mode
+	url = https://github.com/TaylanUB/json-sexp-mode.git

@@ -21,13 +21,14 @@
   (setq projectile-switch-project-action #'projectile-dired);the top-level directory of the project is immediately opened for you in a dired buffer
   (setq projectile-globally-ignored-directories
         (append
-         '(".cquery_cached_index")
+         '("^\\.cquery_cached_index")
+         '("^\\.cache$")
          projectile-globally-ignored-directories
          )
         )
   (setq projectile-globally-ignored-file-suffixes
         (append
-         '(".o")
+         '(".o$" ".idx")
          projectile-globally-ignored-file-suffixes
          )
         )
@@ -43,6 +44,7 @@
         	  "*.png"
         	  "*.o"
         	  "*.so"
+                  "*.idx"
         	  )
         	projectile-globally-ignored-files
         	)

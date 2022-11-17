@@ -181,28 +181,14 @@
 ;;   :ensure t
 ;;   )
 
-;; (use-package lsp-mode
-;;   :ensure t
-;;   :hook
-;;   (js-mode . lsp)
-;;   (js2-mode . lsp)
-;;   (python-mode . lsp)
-;;   (sh-mode . lsp)
-;;   :commands lsp
-;; )
-
-;; (use-package lsp-ui
-;;   :ensure t
-;;   )
-
-;; (use-package helm-company               ; Helm frontend for company
-;;   :ensure t
-;;   :defer t
-;;   :bind (:map company-mode-map
-;;          ([remap complete-symbol] . helm-company)
-;;          ([remap completion-at-point] . helm-company)
-;;          :map company-active-map
-;;          ("C-;" . helm-company)))
+(use-package helm-company               ; Helm frontend for company
+  :ensure t
+  :defer t
+  :bind (:map company-mode-map
+         ([remap complete-symbol] . helm-company)
+         ([remap completion-at-point] . helm-company)
+         :map company-active-map
+         ("C-;" . helm-company)))
 
 (provide 'setup-util-packages)
 ;;; setup-util-packages.el ends here

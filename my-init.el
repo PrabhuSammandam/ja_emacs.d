@@ -13,16 +13,18 @@
 
 ;; (setq my-emacs-path "~/disk/laptop-backup/emacs/")
 (setq my-emacs-path (getenv "EMACS_PATH"))
+(setq my-rtags-path "/home/psammandam/disk/sources/src/rtags/")
 
 (setq my-load-path (list (concat my-emacs-path "dired-du")
                          (concat my-emacs-path "shell-here")
-                         (concat my-emacs-path "rtags/src")))
+                         (concat my-rtags-path "src")))
 
 (setq load-path (append my-load-path  load-path) )
 
 (require 'config-common)
 
 (add-hook 'after-init-hook (lambda () (load-theme 'leuven)))
+;; (add-hook 'after-init-hook (lambda () (load-theme 'spacemacs-dark)))
 
 (require 'setup-helm)
 (require 'setup-ace-window)
@@ -49,6 +51,7 @@
 (require 'shell-here)
 
 ;; ;; Loading the rtags
+
 ;; (require 'rtags)
 ;; (require 'company-rtags)
 ;; (require 'flycheck-rtags)
@@ -56,27 +59,26 @@
 ;; (require 'rtags-xref)
 ;; (require 'setup-rtags)
 
-(require 'setup-rtags_by_package)
+;; Enable the following lines when you are not having the rtags src folder.
+;; -----------------RTAGS PACKAGE CONFIG START---------------------
+;;(require 'setup-rtags_by_package)
 
-(use-package rtags-xref
-  :ensure t
-  )
-
-(use-package helm-rtags
-  :ensure t
-  )
-
-;; (use-package helm-dired-history
+;; (use-package rtags-xref
 ;;   :ensure t
-;;   :init
-;;   (savehist-mode 1)
-;;   :config
-;;   (add-to-list 'savehist-additional-variables 'helm-dired-history-variable)
-;;   (with-eval-after-load 'dired
-;;     (require 'helm-dired-history)
-;;     (define-key dired-mode-map "," 'dired))
-
 ;;   )
 
+;; (use-package helm-rtags
+;;   :ensure t
+;;   )
+;; -----------------RTAGS PACKAGE CONFIG END---------------------
+
+(require 'setup-lsp-development)
+
+
+;; (add-hook 'c-mode-hook 'uncrustify-mode)
+;; (add-hook 'c++-mode-hook 'uncrustify-mode)
+;; (add-hook 'objc-mode-hook 'uncrustify-mode)
+
+(require 'setup-common)
 
 (provide 'my-init)

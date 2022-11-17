@@ -189,5 +189,25 @@ That is, remove a non kept dired from the recent list."
 (setq tab-width 4)
 (setq tab-stop-list (my-generate-tab-stops))
 
+;; https://emacs.stackexchange.com/questions/48500/how-to-clang-format-the-current-buffer-on-save
+(defun clang-format-save-hook-for-this-buffer ()
+  "Create a buffer local save hook."
+  (add-hook 'before-save-hook
+            (lambda ()
+              (when (locate-dominating-file "." ".format-on-save")
+                (clang-format-buffer))
+              ;; Continue to save.
+              nil)
+            nil
+            ;; Buffer local hook.
+            t))
+
+;; Run this for each mode you want to use the hook.
+(add-hook 'c-mode-hook 'clang-format-save-hook-for-this-buffer)
+(add-hook 'c++-mode-hook 'clang-format-save-hook-for-this-buffer)
+
+;; https://emacs.stackexchange.com/questions/26690/compile-command-as-a-directory-variable
+(make-variable-buffer-local 'compile-command)
+
 (provide 'my_util)
 ;;; my_util.el ends here

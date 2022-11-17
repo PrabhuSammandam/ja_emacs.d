@@ -1,5 +1,3 @@
-
-
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
@@ -16,6 +14,8 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (show-paren-mode 1)
 (recentf-mode 1)
+(setq gc-cons-threshold 100000000)
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
 
 ;;--------------------------GLOBAL KEY-BINDINGS----------------------------------
 (global-set-key (kbd "s-x") 'kill-this-buffer)
@@ -40,10 +40,12 @@
 (setq dired-recursive-copies 'always)
 (setq dired-recursive-deletes 'always)
 (setq dired-listing-switches "-laGh1v --group-directories-first")
+(setq dired-clean-confirm-killing-deleted-buffers nil)
 (put 'narrow-to-region 'disabled nil)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq tab-width 4)
+(setq compilation-read-command nil)
 
 ;;; Rings and registers
 (setq kill-ring-max 200                 ; More killed items
@@ -65,5 +67,20 @@
 ;;revert windows on exit - needs winner mode
 (winner-mode)
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Noto Sans Mono" :foundry "GOOG" :slant normal :weight normal :height 113 :width normal)))))
+
+(setq c-basic-offset 4
+      c-default-style "linux"
+      )
+
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+
+(global-set-key [remap mark-sexp] 'easy-mark)
 
 (provide 'config-common)

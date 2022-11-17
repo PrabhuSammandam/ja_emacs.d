@@ -26,7 +26,7 @@
          (interactive)
          (find-file (expand-file-name ,file ,path)))))))
 
-(quick-find "C-h C-x C-w" "~/disk/office/working/ctap")
+(quick-find "C-h C-x C-b" "/home/psammandam/disk/office/bein/")
 (quick-find "C-h C-x C-c" "~/disk/office/checkin/ctap")
 (quick-find "C-h C-x C-i" user-init-file)
 (quick-find "C-h C-x C-q" "/home/psammandam/disk/laptop-backup/emacs/setup-quick-find.el" )
